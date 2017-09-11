@@ -1,0 +1,61 @@
+#!/usr/bin/expect 
+
+set ip [lindex $argv 0];
+set user [lindex $argv 1];
+set logined_prompt [lrange $argv 2 end];
+
+#set timeout 20          
+set timeout 10
+
+set password_prompt "*password*"
+#set logined_prompt "\r*~]$*"
+log_user 0
+spawn ssh $user@$ip      
+
+# 这个放在expect之后鼠标不能切换window?
+log_user 1
+#expect "$logined_prompt"
+#send "sh ~/kibot_ros_wrapper/kibot/SLAM-Map-Building-with-kibot.sh\n"
+expect {
+        "*yes/no" { 
+                send "yes\n"
+                exp_continue
+        }  
+        "$password_prompt" { 
+                send "$password\n" 
+                exp_continue
+        }  
+        "$logined_prompt" {
+                send "sh ~/kibot_ros_wrapper/kibot/the_kibot_panorama_demo.sh\n"
+        }
+} 
+
+#expect "*yes/no"
+#send "yes\r";
+
+#log_user 0
+#expect "login:"
+#send "$user\n"           
+
+#expect "$password_prompt"
+#send "$password\n"           
+
+#expect "$logined_prompt"
+#不使用tmux
+#send "tmux kill-session\n"
+#exec sh -c {tmux kill-window -t :0}
+#exec sh -c {tmux new-window -k -t :0}
+#exec sh -c {tmux select-window -t :0}
+#send "tmux kill-window -t :0\n"
+#send "tmux new-window -k -t :0\n"
+#send "tmux select-window -t :0\n"
+#expect "$logined_prompt"
+#send "cd ~/kibot_ros_wrapper\n"
+
+#expect "$logined_prompt"
+#send "source ./setup/setup_base.sh\n"
+
+#expect "$logined_prompt"
+#send "roslaunch turtlebot_bringup minimal.launch --screen\n"
+
+interact             

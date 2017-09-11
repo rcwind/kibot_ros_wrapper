@@ -1,0 +1,1 @@
+../remote/view_kibot_in_rviz.sh

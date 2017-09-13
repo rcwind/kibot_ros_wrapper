@@ -147,7 +147,7 @@ alias vi="vim"
 #source ~/ftu/arm/toolchain/set_env.sh
 #cd ~/ftu/arm/dturls/bin/ && ./set_env_create.sh && cd - > /dev/null
 #source ~/ftu/arm/dturls/bin/set_env.sh
-source ~/ubuntu_env_conf/bin/tmux_session.sh
+source ~/kibot_ros_wrapper/tmux/tmux_session.sh
 # export ARM_ROOT=~/ftu/arm/arm/src
 
 #export burn=~/ftu/arm/sys/burn/ftu/

@@ -4,7 +4,7 @@ sudo apt-get install \
         expect \
         ssh \
         sshfs \
-        ros-indigo-kobuki \
-        ros-indigo-kobuki-core \
-        ros-indigo-turtlebot \
+        ros-kinetic-kobuki \
+        ros-kinetic-kobuki-core \
+        ros-kinetic-turtlebot \
 

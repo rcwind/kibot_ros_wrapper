@@ -18,7 +18,7 @@ tmux kill-window -t :1 >>/dev/null || true
 tmux new-window  -k -t :1
 tmux select-window -t :1
 tmux send-keys -t :1 "source $this_script_dir/env.sh" Enter
-tmux send-keys -t 1 "rqt_remocon" Enter
+tmux send-keys -t :1 "rqt_remocon" Enter
 
 tmux select-window -t :0
 

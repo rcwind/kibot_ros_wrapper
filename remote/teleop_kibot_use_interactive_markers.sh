@@ -18,7 +18,7 @@ tmux kill-window -t :1 >>/dev/null || true
 tmux new-window  -k -t :1
 tmux select-window -t :1
 tmux send-keys -t :1 "source $this_script_dir/env.sh" Enter
-tmux send-keys -t 1 "roslaunch turtlebot_interactive_markers interactive_markers.launch --screen" Enter
+tmux send-keys -t :1 "roslaunch turtlebot_interactive_markers interactive_markers.launch --screen" Enter
 
 sleep 5
 tmux kill-window -t :2 >>/dev/null || true

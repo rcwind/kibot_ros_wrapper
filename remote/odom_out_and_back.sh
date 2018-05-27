@@ -9,7 +9,6 @@ file_prefix=${file%%.*}
 source $this_script_dir/env.sh
 #make the minimal software been launched
 ssh -t $USERNAME_IN_KIBOT@$IP_OF_KIBOT "sh /home/$USERNAME_IN_KIBOT/kibot_ros_wrapper/kibot/kill_tmux_window.sh"
-#launch_cmd="$this_script_dir/expect/$0.expect $IP_OF_KIBOT $USERNAME_IN_kibot $LOGIN_PROMPT"
 launch_cmd="$this_script_dir/kibot.expect $IP_OF_KIBOT $USERNAME_IN_KIBOT $LOGIN_PROMPT $file_prefix 1"
 sleep 1
 tmux kill-window -t :0 >>/dev/null || true

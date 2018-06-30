@@ -3,6 +3,7 @@
 # usage: source setup_base.sh
 # turtlebot默认的base就是kobuki, 默认的3d sensor是 asus xtion pro
 # export TURTLEBOT_BASE=kobuki
+export KISR_LIDAR=ydlidar
 # export TURTLEBOT_STACKS=hexagons
 # export TURTLEBOT_3D_SENSOR=kinect
 # export TURTLEBOT_SIMULATION=false
